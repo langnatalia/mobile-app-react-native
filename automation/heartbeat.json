@@ -1,0 +1,20 @@
+{
+  "status": "healthy",
+  "timestamp": "2024-10-27T10:30:00Z",
+  "version": "1.2.3",
+  "environment": "production",
+  "uptime": "12h 34m 56s",
+  "data": {
+    "cpu_usage": "10%",
+    "memory_usage": "50%",
+    "disk_space_available": "10GB",
+    "network_latency": "5ms",
+     "active_users": 12345,
+    "database_connection": "ok"
+  },
+  "dependencies": {
+    "auth_service": "healthy",
+    "payment_gateway": "degraded", // Consider alerting on this
+    "data_storage": "healthy"
+  }
+}
