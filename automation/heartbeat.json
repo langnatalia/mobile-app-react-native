@@ -3,18 +3,34 @@
   "timestamp": "2024-10-27T10:30:00Z",
   "version": "1.2.3",
   "environment": "production",
-  "uptime": "12h 34m 56s",
+  "uptime_seconds": 45296,
   "data": {
-    "cpu_usage": "10%",
-    "memory_usage": "50%",
-    "disk_space_available": "10GB",
-    "network_latency": "5ms",
-     "active_users": 12345,
+    "cpu_usage_percent": 10,
+    "memory_usage_percent": 50,
+    "disk_space_available_gb": 10,
+    "network_latency_ms": 5,
+    "active_users": 12345,
     "database_connection": "ok"
   },
   "dependencies": {
-    "auth_service": "healthy",
-    "payment_gateway": "degraded", // Consider alerting on this
-    "data_storage": "healthy"
-  }
+    "auth_service": {
+      "status": "healthy",
+      "response_time_ms": 20
+    },
+    "payment_gateway": {
+      "status": "degraded",
+      "response_time_ms": 150,
+      "alerts": [
+        "High latency detected"
+      ]
+    },
+    "data_storage": {
+      "status": "healthy",
+      "response_time_ms": 15
+    }
+  },
+  "alerts": [
+    "Payment gateway degraded"
+  ],
+  "build_number": "1234"
 }
